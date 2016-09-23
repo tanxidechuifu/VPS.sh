@@ -92,6 +92,6 @@
         使用说明：
     </div>
     <div>
-        yum -y wget;wget https://github.com/tanxidechuifu/One-button.sh/blob/master/VPS.sh;sh VPS.sh
+        yum -y wget;wget https://github.com/tanxidechuifu/One-button.sh/blob/master/vps.sh;sh vps.sh
     </div>
 </div>
