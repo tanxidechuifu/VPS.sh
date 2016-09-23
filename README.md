@@ -75,4 +75,19 @@
     <div>
         键入回车则使用默认值
     </div>
+    <div>
+        <br>
+    </div>
+    <div>
+        <br>
+    </div>
+    <div>
+        ――――
+    </div>
+    <div>
+        使用说明：
+    </div>
+    <div>
+        yum install -y wget;wget https://github.com/tanxidechuifu/One-button.sh/blob/master/VPS.sh;sh VPS.sh
+    </div>
 </div>
