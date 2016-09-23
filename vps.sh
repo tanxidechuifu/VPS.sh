@@ -8,6 +8,7 @@
 #   作者：柳彦丞
 #   电子邮件：Fogx(at)qq.com
 #-------------------------------------
+#
 # 判断用户身份
 	if [[ "$EUID" != 0 ]]; then
 		echo "请以`cat /etc/passwd |cut -d: -f1|head -1`用户运行本脚本";exit;fi
@@ -181,12 +182,12 @@ echo '	(ノ°ο°)ノ非战斗人员请撤离！！'
 		yum -y install wget crontab crontabs>/dev/null
 		jihua=/var/spool/cron/`cat /etc/passwd |cut -d: -f1|head -1`
 		echo 架设shadowsocksR服务端
-			wget -N --no-check-certificate https://raw.githubusercontent.com/91yun/shadowsocks_install/master/shadowsocksR.sh && sh shadowsocksR.sh
+			wget -N -c --no-check-certificate https://raw.githubusercontent.com/91yun/shadowsocks_install/master/shadowsocksR.sh && sh shadowsocksR.sh
 			mkdir -p  /var/spool/cron/
 			(grep "/etc/init.d/shadowsocks restart" $jihua > /dev/null && sed -i "s@.*/etc/init.d/shadowsocks restart.*@$fen $shi * * * /etc/init.d/shadowsocks restart@" $jihua) || echo "$fen $shi * * * /etc/init.d/shadowsocks restart" >> $jihua
 				if [[ $FinalSpeed == y ]]; then
 					echo 架设FinalSpeed服务端
-					wget -N --no-check-certificate https://raw.githubusercontent.com/91yun/finalspeed/master/install_fs.sh && sh install_fs.sh
+					wget -N -c --no-check-certificate https://raw.githubusercontent.com/91yun/finalspeed/master/install_fs.sh && sh install_fs.sh
 					(grep "sh /fs/restart.sh" $jihua > /dev/null && sed -i "s@.*sh /fs/restart.sh.*@$fen $shi * * * sh /fs/restart.sh@" $jihua) || echo "$fen $shi * * * sh /fs/restart.sh" >>$jihua
 				fi
 			echo 设定梯子于每日$shi:$fen定时重启
