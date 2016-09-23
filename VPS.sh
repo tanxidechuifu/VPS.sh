@@ -15,7 +15,6 @@
 cat << EOF 
 	→_→自由 平等 公正 法治 爱国 敬业 诚信 友善←_←
 
-
 本脚意为：
 
 a.[自定义root用户、属组名、及SSH端口号]
@@ -23,6 +22,7 @@ a.[自定义root用户、属组名、及SSH端口号]
 	自定义root用户、属组名默认值为admin
 	如果选择改名，为了保证系统兼容性，原root家目录路径不变
 	同时将生成一个无家目录的root普通用户及属主以掩人耳目，sudo命令将失效，请妥善保管好管理员帐号密码
+
 	自定义SSH端口默认值为22233，推荐使用大端口号，可减小盲扫概率
 b.[中文化Linux]
 	语言地区配置（zh_CN.UTF-8）、校准时间（CST-8）
@@ -149,7 +149,7 @@ echo '	(ノ°ο°)ノ非战斗人员请撤离！！'
 			if [[ $osv == 6 ]]; then
 				if [[ -s /etc/sysconfig/i18n ]]; then
 					echo 正在安装EPEL源
-						yum install -y epel-release >/dev/null
+						yum -y install epel-release >/dev/null
 					echo 更新yum缓存
 						yum makecache >/dev/null
 					echo 正在安装中文语言包
@@ -171,14 +171,14 @@ echo '	(ノ°ο°)ノ非战斗人员请撤离！！'
 			fi
 		echo -e "更改时区为CST-8\n正在校准时间"
 			echo 正在安装ntpdate
-				yum install -y ntpdate>/dev/null
+				yum -y install ntpdate>/dev/null
 			(cat /etc/localtime|grep CST-8) || (rm -rf /etc/localtime;ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime)
 			ntpdate 1.cn.pool.ntp.org|grep 
 	fi
 # 梯子
 	if [[ $shadowsocks == y ]]; then
 		echo 正在安装 wget crontab crontabs
-		yum install -y wget crontab crontabs>/dev/null
+		yum -y install wget crontab crontabs>/dev/null
 		jihua=/var/spool/cron/`cat /etc/passwd |cut -d: -f1|head -1`
 		echo 架设shadowsocksR服务端
 			wget -N --no-check-certificate https://raw.githubusercontent.com/91yun/shadowsocks_install/master/shadowsocksR.sh && sh shadowsocksR.sh
