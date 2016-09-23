@@ -18,7 +18,7 @@
 推荐使用CentOS系统<br>
 键入回车则使用默认值<br>
 ##使用说明：
->	 yum -y wget;wget https://raw.githubusercontent.com/tanxidechuifu/One-button.sh/blob/master/vps.sh;sh vps.sh
+>	 yum -y install wget;wget -N --no-check-certificate https://github.com/tanxidechuifu/One-button.sh/blob/master/vps.sh;sh vps.sh
 
 ##日志：
 
