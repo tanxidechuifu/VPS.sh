@@ -1,6 +1,6 @@
 #!/bin/bash
 #----------------版权-----------------
-#   名称：个人VPS脚本
+#   名称：VPS脚本
 #   版本号：1.0
 #   类型：基础
 #   语言：Bash shell
@@ -149,7 +149,7 @@ echo '	(ノ°ο°)ノ非战斗人员请撤离！！'
 			if [[ $osv == 6 ]]; then
 				if [[ -s /etc/sysconfig/i18n ]]; then
 					echo 正在安装EPEL源
-						yum -y install epel-release >/dev/null
+						yum install -y epel-release >/dev/null
 					echo 更新yum缓存
 						yum makecache >/dev/null
 					echo 正在安装中文语言包
