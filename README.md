@@ -76,7 +76,11 @@
         键入回车则使用默认值
     </div>
     <div>
-        <br>
+        感谢
+        <a href="https://github.com/91yun">
+            91yun
+        </a>
+        的脚本支持
     </div>
     <div>
         <br>
@@ -88,6 +92,6 @@
         使用说明：
     </div>
     <div>
-        yum -y install wget;wget -N https://github.com/tanxidechuifu/One-button.sh/blob/master/VPS.sh;sh VPS.sh
+        yum -y wget;wget https://github.com/tanxidechuifu/One-button.sh/blob/master/VPS.sh;sh VPS.sh
     </div>
 </div>
