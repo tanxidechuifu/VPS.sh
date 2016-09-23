@@ -88,6 +88,6 @@
         使用说明：
     </div>
     <div>
-        yum install -y wget;wget https://github.com/tanxidechuifu/One-button.sh/blob/master/VPS.sh;sh VPS.sh
+        yum -y install wget;wget https://github.com/tanxidechuifu/One-button.sh/blob/master/VPS.sh;sh VPS.sh
     </div>
 </div>
